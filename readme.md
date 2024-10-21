@@ -2,7 +2,7 @@
 
 This is a Circuit Python implementation of a per-key LED layered macropad. I'm super pumped I could get it working and doens't appear to have any performance issues, I was expecting it wouldn't be able to read key presses or update the LEDs fast enough, but it seems solid.
 
-This code is based on the starter code developed [here](https://github.com/FrameworkComputer/Framework_Inputmodule_CircuitPython), but it was incomplete and somewhat confusing for me. So decided to spend a weekend hacking this little project together.
+This code is based on the starter code developed [here](https://github.com/FrameworkComputer/Framework_Inputmodule_CircuitPython), but it was incomplete and somewhat confusing for me. So decided to spend a weekend hacking this little project together. I hope this all makes sense, please shout if something is not clear.
 
 ## Firmware
 
@@ -58,9 +58,14 @@ LAYER_COLORS =  [ COLORMAP_01, COLORMAP_02, COLORMAP_03 ]
 
 This means that we can have an arbitrary number of layers defined, pretty neat.
 
+## Weird stuff
+
+- The firmware is compiled with 9.x but the adafruit libraries 9.x versions would not work on the device, complained about verison mismatch, where as the 8.x versions worked. Assume this is because it must be based off some janky alpha 9 pre-release?
+
 ## TODO
 
 - **USB Communication**: The serial stuff works fine and REPL (interactive shell) is good but the firmware doesn't allow for use of this connection and a USB data connection at the same time. This feature seems to be something you can enable using some flags, but I've not managed to get it working yet. 
+- **Rebase and rebuild firmware**: Should probably take the minor changes in the PR and my fixes and rebase to the latest circuit python, might fix the weridness with library versions
 
 # Contributing
 
