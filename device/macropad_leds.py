@@ -63,11 +63,11 @@ class MacropadLEDs:
         self.is31[led_index+1] = color[1]
         self.is31[led_index+2] = color[0]
 
-    def set_led_flash(self, col, row, color, repeats=5):
+    def set_led_flash(self, col, row, col1, col2, repeats=5):
         for _ in range(repeats):
-            self.set_led_color(col, row, colors.OFF)
+            self.set_led_color(col, row, col2)
             time.sleep(DELAY_ANIMATION * 2)
-            self.set_led_color(col, row, color)
+            self.set_led_color(col, row, col1)
             time.sleep(DELAY_ANIMATION * 2)
 
     def fill(self, color):

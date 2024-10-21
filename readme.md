@@ -64,8 +64,10 @@ This means that we can have an arbitrary number of layers defined, pretty neat.
 
 ## TODO
 
+- **Make some nicer set-ups**: I'm terrible as design stuff, so it'd be good to come up with some better default layouts people can build from, maybe an `config.example.py`. Possibly even a config generator if anyone is actually interested in this project.
+- **Multiple key presses**: Currently multiple key presses on the macro pad will be ignored and only the first key in the loop will be considered. This should be easy enough to update though.
 - **USB Communication**: The serial stuff works fine and REPL (interactive shell) is good but the firmware doesn't allow for use of this connection and a USB data connection at the same time. This feature seems to be something you can enable using some flags, but I've not managed to get it working yet. 
-- **Rebase and rebuild firmware**: Should probably take the minor changes in the PR and my fixes and rebase to the latest circuit python, might fix the weridness with library versions
+- **Rebase and rebuild firmware**: Should probably take the minor changes in the PR and my fixes and rebase to the latest circuit python, might fix the weirdness with library versions
 
 # Contributing
 

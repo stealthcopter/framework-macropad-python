@@ -71,14 +71,14 @@ class MacropadLayer:
         elif code == DEVICE_BOOTLOADER:
             self.bootloader_counter += 1
             if self.bootloader_counter == 3:
-                self.macropad_leds.set_led_flash(x, y, colors.RED)
+                self.macropad_leds.set_led_flash(x, y, config.LAYER_COLORS[self.current_layer][y][x], colors.RED)
             elif self.bootloader_counter >= 4:
                 jump_to_bootloader()
 
         elif code == DEVICE_REBOOT:
             self.reboot_counter += 1
             if self.reboot_counter == 3:
-                self.macropad_leds.set_led_flash(x, y, colors.RED)
+                self.macropad_leds.set_led_flash(x, y, config.LAYER_COLORS[self.current_layer][y][x], colors.RED)
             elif self.reboot_counter >= 4:
                 reboot()
 
