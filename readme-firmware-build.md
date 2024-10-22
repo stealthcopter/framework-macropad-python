@@ -14,7 +14,7 @@ sudo apt install python3-pip build-essential git git-lfs gettext cmake gcc-arm-n
 git clone https://github.com/adafruit/circuitpython.git
 cd circuitpython
 
-# Check out the specific commit from the PR
+# Check out the specific commit from the PR https://github.com/adafruit/circuitpython/pull/8233
 git checkout 029c7a0caa075550fc5618b7c71075fb13937a13
 
 # Create virtual env so we dont mess up our system
@@ -37,7 +37,7 @@ make -C mpy-cross
 
 # Build the actual firmware for your device
 
-Now you're ready to build the firmware, but first we need to make a quick modification to `circuitpython/ports/raspberrypi/boards/framework_inputmodule/pins.c` as it's missing from the PR for some reason. I had to reverse engineer the pins from the QMK firmware source code, so I hope I've got them right:
+Now you're ready to build the firmware, but first we need to make a quick modification to `circuitpython/ports/raspberrypi/boards/framework_inputmodule/pins.c` as it's missing from the PR for some reason. I had to reverse engineer the pins from the [QMK firmware source code](https://github.com/FrameworkComputer/qmk_firmware/tree/framework16-keyboards/keyboards/framework), so I hope I've got them right:
 
 ```c
 #include "shared-bindings/board/__init__.h"

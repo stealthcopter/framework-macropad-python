@@ -4,6 +4,10 @@ This is a Circuit Python implementation of a per-key LED layered macropad. I'm s
 
 This code is based on the starter code developed [here](https://github.com/FrameworkComputer/Framework_Inputmodule_CircuitPython), but it was incomplete and somewhat confusing for me. So decided to spend a weekend hacking this little project together. I hope this all makes sense, please shout if something is not clear.
 
+## Motivation & Alternatives
+
+I wanted to be able to tinker with my macropad and rapidly change things on a per-key basis, which makes the circuit cpython build ideal, as there is no need to compile firmware each time. There is also an [OpenRGB firmware](https://community.frame.work/t/guide-how-to-install-openrgb-on-fw16/53358) guide that may be an option to you if you are looking for something different. 
+
 ## Firmware
 
 1. Either use the pre-compiled firmware in the [releases](https://github.com/stealthcopter/framework-macropad-python/releases) section or follow the guide for building this yourself in [readme-firmware-build.md](readme-firmware-build.md)
