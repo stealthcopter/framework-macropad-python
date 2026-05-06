@@ -49,7 +49,7 @@ COLORMAP_01 = [
 ]
 ```
 
-The full list of colors are in `colors.py` and if a whole layer is just one color you can provide a single color instead of a list of list and it will work and save a tiny bit of memory.
+The full list of pre-defined colors are in `colors.py`, or you can simple add your own like `(0, 100, 255)`. If a whole layer is just one color you can provide a single color instead of a list of list, and it will work and save a bit of memory.
 
 ## Layers
 

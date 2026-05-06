@@ -4,6 +4,7 @@ Responsible for:
 - Switching between layers of colors and key events
 """
 from adafruit_hid.keyboard import Keyboard
+from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS
 from keycode import *
 
 import usb_hid
@@ -26,6 +27,7 @@ class MacropadLayer:
     def __init__(self, macropad_leds):
         self.macropad_leds = macropad_leds
         self.keyboard = Keyboard(usb_hid.devices)
+        self.layout = KeyboardLayoutUS(self.keyboard)
 
         self.current_layer = 0
         self.reboot_counter = 0
@@ -48,6 +50,8 @@ class MacropadLayer:
                 # Multi-key presses
                 self.keyboard.press(*code)
                 self.keyboard.release_all()
+            elif isinstance(code, str):
+                self.layout.write(code)
             elif code < 1000:
                 # Single key presses
                 self.keyboard.press(code)
